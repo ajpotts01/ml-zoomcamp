@@ -3,11 +3,11 @@ import pickle
 import numpy as np
 from flask import Flask, request, jsonify, Response
 
-INPUT_PATH = "../models/model_reg=%s.bin"
+INPUT_PATH = "./models/model_reg=%s.bin"
 final_reg_factor: float = 0.1
 
 # Time to load!
-# Note: This requires scikit-learn to be installed
+# Note: This requires scikit-learn to be installed but not necessarily imported.
 with open(INPUT_PATH % final_reg_factor, "rb") as file_model_input:
     (loaded_vect, loaded_model) = pickle.load(file_model_input)
 
