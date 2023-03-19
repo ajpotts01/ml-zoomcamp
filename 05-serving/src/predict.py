@@ -15,10 +15,10 @@ with open(INPUT_PATH % final_reg_factor, "rb") as file_model_input:
 app = Flask("churn")
 
 
-def model_prediction(customer: dict) -> tuple[float, float]:
+def model_prediction(customer: dict) -> tuple[float, bool]:
     X: np.ndarray = loaded_vect.transform([customer])
-    prediction: float = loaded_model.predict_proba(X)[0, 1]
-    churn: float = prediction >= 0.5
+    prediction: float = float(loaded_model.predict_proba(X)[0, 1])
+    churn: bool = bool(prediction >= 0.5)
 
     return prediction, churn
 
