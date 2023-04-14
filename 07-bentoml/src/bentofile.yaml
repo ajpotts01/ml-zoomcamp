@@ -1,0 +1,11 @@
+service: "service.py:model_service"
+labels:
+  owner: ajp
+  project: ml-zoomcamp
+include:
+  - "*.py"
+python:
+  packages:
+    - xgboost
+    - scikit-learn
+    - pydantic

@@ -11,3 +11,4 @@ waitress==2.1.2
 numpy==1.21.6
 xgboost==1.7.5
 bentoml==1.0.17
+pydantic==1.10.7
